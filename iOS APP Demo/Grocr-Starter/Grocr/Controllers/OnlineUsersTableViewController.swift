@@ -33,7 +33,7 @@ class OnlineUsersTableViewController: UITableViewController {
   
   // MARK: Constants
   let userCell = "UserCell"
-  
+  let usersRef = Database.database().reference(withPath: "online")
   // MARK: Properties
   var currentUsers: [String] = []
   
@@ -44,7 +44,28 @@ class OnlineUsersTableViewController: UITableViewController {
   // MARK: UIViewController Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    currentUsers.append("hungry@person.food")
+    // 1
+    usersRef.observe(.childAdded, with: { snap in
+        // 2
+        guard let email = snap.value as? String else { return }
+        self.currentUsers.append(email)
+        // 3
+        let row = self.currentUsers.count - 1
+        // 4
+        let indexPath = IndexPath(row: row, section: 0)
+        // 5
+        self.tableView.insertRows(at: [indexPath], with: .top)
+    })
+    usersRef.observe(.childRemoved, with: { snap in
+        guard let emailToFind = snap.value as? String else { return }
+        for (index, email) in self.currentUsers.enumerated() {
+            if email == emailToFind {
+                let indexPath = IndexPath(row: index, section: 0)
+                self.currentUsers.remove(at: index)
+                self.tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+        }
+    })
   }
   
   // MARK: UITableView Delegate methods
@@ -63,6 +84,27 @@ class OnlineUsersTableViewController: UITableViewController {
   // MARK: Actions
   
   @IBAction func signoutButtonPressed(_ sender: AnyObject) {
-    dismiss(animated: true, completion: nil)
+    // 1
+    let user = Auth.auth().currentUser!
+    let onlineRef = Database.database().reference(withPath: "online/\(user.uid)")
+    
+    
+    // 2
+    onlineRef.removeValue { (error, _) in
+        
+        // 3
+        if let error = error {
+            print("Removing online failed: \(error)")
+            return
+        }
+        
+        // 4
+        do {
+            try Auth.auth().signOut()
+            self.dismiss(animated: true, completion: nil)
+        } catch (let error) {
+            print("Auth sign out failed: \(error)")
+        }
+    }
   }
 }

@@ -36,6 +36,7 @@
 		90E01CD9D5C237C44E4FC22B /* Pods-Grocr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grocr.release.xcconfig"; path = "Pods/Target Support Files/Pods-Grocr/Pods-Grocr.release.xcconfig"; sourceTree = "<group>"; };
 		9329CDD67FBDDC24EC3B34C8 /* libPods-Grocr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Grocr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D176F9DD220BFF8B0011E417 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D1C7C5262218BCA000BFB348 /* Grocr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Grocr.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +89,7 @@
 		645D7896204344160093B00C /* Grocr */ = {
 			isa = PBXGroup;
 			children = (
+				D1C7C5262218BCA000BFB348 /* Grocr.entitlements */,
 				649F421B20438CBC00B21997 /* Models */,
 				649F421C20438CC100B21997 /* Controllers */,
 				645D7897204344160093B00C /* AppDelegate.swift */,
@@ -157,7 +159,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -390,6 +392,7 @@
 			baseConfigurationReference = 7E91D6516268E18FC88947A4 /* Pods-Grocr.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Grocr/Grocr.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F8GLU6B3GQ;
 				INFOPLIST_FILE = Grocr/Info.plist;
@@ -406,6 +409,7 @@
 			baseConfigurationReference = 90E01CD9D5C237C44E4FC22B /* Pods-Grocr.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Grocr/Grocr.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F8GLU6B3GQ;
 				INFOPLIST_FILE = Grocr/Info.plist;
