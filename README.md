@@ -7,6 +7,7 @@ Week 6
 4. Bluetooth back up
 
 # Backend data structure
+```javascript
 // The root of the tree
 {
     "Users": {
@@ -30,3 +31,4 @@ Week 6
         }
     }
 }
+```
