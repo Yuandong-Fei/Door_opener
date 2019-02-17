@@ -18,8 +18,8 @@
                     "log": ["1902131602","1902160930"] //using an ordered linked list, YYMMDDHHMM
                 }
                 "Jim": {
-                "user_name": "jimmmmm",
-                "log": ["19021301359"] //using an ordered linked list, YYMMDDHHMM
+                    "user_name": "jimmmmm",
+                    "log": ["19021301359"] //using an ordered linked list, YYMMDDHHMM
                 }
             }
             "Door": {
