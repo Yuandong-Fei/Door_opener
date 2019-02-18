@@ -33,7 +33,7 @@ class GroceryListTableViewController: UITableViewController {
 
   // MARK: Constants
   let listToUsers = "ListToUsers"
-  let ref = Database.database().reference(withPath:"grocery-items")
+  let ref = Database.database().reference(withPath:"Users")
   let usersRef = Database.database().reference(withPath: "online")
   // MARK: Properties
   var items: [GroceryItem] = []
