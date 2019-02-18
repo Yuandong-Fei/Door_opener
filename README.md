@@ -10,7 +10,7 @@
 ```javascript
 // The root of the tree
 {
-    "User": {
+    "Person": {
         "vi53IeYfk1U5j8iONssTdMJyzjv2": {
             "Profile": {
                 "Name": "Steven",
