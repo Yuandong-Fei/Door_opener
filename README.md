@@ -10,16 +10,26 @@
 ```javascript
 // The root of the tree
 {
-    "Users": {
-        "George": {
-            "Friends": {
+    "RoomOwner": {
+        "UID": {
+            "Profile": {
+                "Name": "Edward",
+                "Gender": "Male",
+                "UserName": "xkcd",
+                "log": []
+            }
+            "Friend": {
                 "Alice": {
                     "user_name": "Alice2000",
+                    "Gender": "Female"
                     "log": ["1902131602","1902160930"] //using an ordered linked list, YYMMDDHHMM
                 }
-                "Jim": {
-                    "user_name": "jimmmmm",
-                    "log": ["19021301359"] //using an ordered linked list, YYMMDDHHMM
+            }
+            "Roommate": {
+                "Edward": {
+                    "user_name": "Ed",
+                    "Gender": "Male",
+                    "log": ["1902131602","1902160930"] //using an ordered linked list, YYMMDDHHMM
                 }
             }
             "Door": {
