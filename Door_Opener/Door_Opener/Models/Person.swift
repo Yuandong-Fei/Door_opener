@@ -19,6 +19,8 @@ struct Person {
     var roommate: [String] = []
     var friend: [String] = []
     var authorizedPeople: AuthorizedPeople
+    // var authorizedBy: String
+    // TODO: furthur implementing Person struct
     
     init(UID: String, name: String, gender: String, userName: String, roomReferenceNumber: String, authorizedPeople: AuthorizedPeople){
         self.UID = UID
