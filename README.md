@@ -6,6 +6,15 @@
 3. ordered parts
 4. Bluetooth back up
 
+## Week 7
+1. Printed the schematics and modify it
+2. Back end updated
+3. data structure completed
+4. Succesfully connected database to Arduino
+5. circuit schematics updated
+6. Servo and LCD tested
+7. App created and logic gateway is updated
+
 ## Backend data structure
 ```javascript
 // The root of the tree
