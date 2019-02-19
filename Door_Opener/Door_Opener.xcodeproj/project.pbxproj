@@ -17,6 +17,8 @@
 		D171319C221A74930068DE91 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = D171319B221A74930068DE91 /* Person.swift */; };
 		D171319E221A76A40068DE91 /* AuthorizedPeople.swift in Sources */ = {isa = PBXBuildFile; fileRef = D171319D221A76A40068DE91 /* AuthorizedPeople.swift */; };
 		D17131A0221A8B5C0068DE91 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D171319F221A8B5C0068DE91 /* LoginViewController.swift */; };
+		D17131A2221B71B30068DE91 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17131A1221B71B30068DE91 /* FriendsViewController.swift */; };
+		D17131A4221B7D800068DE91 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17131A3221B7D800068DE91 /* SampleData.swift */; };
 		EEFA54A6EA8081B2F7F04E5D /* libPods-Door_Opener.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D070198173A9A766479D74CE /* libPods-Door_Opener.a */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +38,8 @@
 		D171319B221A74930068DE91 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		D171319D221A76A40068DE91 /* AuthorizedPeople.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizedPeople.swift; sourceTree = "<group>"; };
 		D171319F221A8B5C0068DE91 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D17131A1221B71B30068DE91 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		D17131A3221B7D800068DE91 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 				D171318C221A27C60068DE91 /* LaunchScreen.storyboard */,
 				D171318F221A27C60068DE91 /* Info.plist */,
 				D1713195221A28840068DE91 /* GoogleService-Info.plist */,
+				D17131A3221B7D800068DE91 /* SampleData.swift */,
 			);
 			path = Door_Opener;
 			sourceTree = "<group>";
@@ -115,6 +120,7 @@
 			children = (
 				D1713185221A27C50068DE91 /* ViewController.swift */,
 				D171319F221A8B5C0068DE91 /* LoginViewController.swift */,
+				D17131A1221B71B30068DE91 /* FriendsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -221,8 +227,10 @@
 				D1713186221A27C50068DE91 /* ViewController.swift in Sources */,
 				D1713184221A27C50068DE91 /* AppDelegate.swift in Sources */,
 				D171319C221A74930068DE91 /* Person.swift in Sources */,
+				D17131A2221B71B30068DE91 /* FriendsViewController.swift in Sources */,
 				D171319A221A2E3B0068DE91 /* User.swift in Sources */,
 				D171319E221A76A40068DE91 /* AuthorizedPeople.swift in Sources */,
+				D17131A4221B7D800068DE91 /* SampleData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
