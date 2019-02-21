@@ -1,33 +1,12 @@
 #include <Servo.h>
 #include <string.h>
-int PIRpin = 3; // analog
-int buttonPin = 4;
-int LCDpin = 5;
-int PIRval = 0;
-int MagneticSwitchpin = 6;
-String validation;
-
-Servo servo;  // define variables for servo use
-int servoPin = 4;
-String servo1;
-
+#include <door_opener_header.h>
 void setup() {
   Serial.begin(9600);
-  servo.attach(servoPin);
-  // define pins:
-  pinMode(PIRpin, INPUT);
-  pinMode(buttonPin, INPUT);
-  pinMode(LCDpin, OUTPUT);
-  pinMode(MagneticSwitchpin, INPUT);
-  pinMode(servoPin, OUTPUT);
-  int button = digitalRead(buttonPin);
-  int MagneticSwitch = digitalRead(MagneticSwitchpin);
 }
 void loop() {
-  // put your main code here, to run repeatedly:
-  val = analogRead(PIRpin);
-        //detect people
-  if (PIRval <= 780) {
+  digitalWrite(trigPin,HIGH);
+  if (distance <= 100) {
     validation = Firebase.getString("User", "announcement");
     delay(1000);
     if (validation == "Authorized") { //see if the person's authorized, then utilize the servo, and turn on the LED
