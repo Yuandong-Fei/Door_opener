@@ -21,24 +21,16 @@
 {
     "Person": {
         "vi53IeYfk1U5j8iONssTdMJyzjv2": {
-            "Profile": {
-                "Name": "Steven",
-                "Gender": "Male",
-                "UserName": "xkcd",
-                "RoomReferenceNumber": "CATA5230"
-            },
-            "Roommate": {
-                "UID": ["j8iONssTdMJyzjv2vi53IeYfk1U5", "NssTdMJyzjv2vi53IeYfk1U5j8iO"]
-            },
-            "Friend": {
-                "UID": ["TdMJyzjv2vi53IeYfk1U5j8iONss","j8iONssTdMJyzjv2vi53IeYfk1U5", "NssTdMJyzjv2vi53IeYfk1U5j8iO"]
-            },
-            "AuthourizedPeople": {
-                "TdMJyzjv2vi53IeYfk1U5j8iONss": {
-                    "Times": 1,
-                    "TimePeriod": [1030, 2045]
-                }
-            }
+            "Name": "Steven",
+            "Gender": "Male",
+            "UserName": "xkcd",
+            "RoomReferenceNumber": "CATA5230",
+            "Roommate": "UID": ["j8iONssTdMJyzjv2vi53IeYfk1U5", "NssTdMJyzjv2vi53IeYfk1U5j8iO"],
+            "Friend": ["TdMJyzjv2vi53IeYfk1U5j8iONss","j8iONssTdMJyzjv2vi53IeYfk1U5", "NssTdMJyzjv2vi53IeYfk1U5j8iO"],
+            "AuthourizedPeople": ["TdMJyzjv2vi53IeYfk1U5j8iONss"],
+            "logsDate": ["0612", "0530"],
+            "logsTime": ["0612", "0530"],
+            "logsRoom": ["CATA5230", "CATA8211"]["0612", "0530"]
         }
     }
     "Door": {
@@ -47,18 +39,9 @@
             "Status": False, //False for Locked doors
             "FaceIDAuthorized": False,
             "Message": "Waiting Authorization",
-            "Log": {
-                "NssTdMJyzjv2vi53IeYfk1U5j8iO": {
-                    "NumberOfEntries": 1,
-                    "1": {
-                        "Year": 2019,
-                        "Month": 02,
-                        "Day": 17,
-                        "Hour": 09,
-                        "Minute": 24
-                    }
-                }
-            }
+            "logUserName": ["NssTdMJyzjv2vi53IeYfk1U5j8iO"],
+            "logDate": [],
+            "logTime": []
         }
     }
 }
