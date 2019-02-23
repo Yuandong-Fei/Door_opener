@@ -21,20 +21,22 @@ struct Person {
     var logDate: [Int] = []
     var logTime: [Int] = []
     var logRoomReferenceNumber: [String] = []
-    var authorizedPeople: AuthorizedPeople
-    // var authorizedBy: String
+    var authorizedPeople: [String] = []
+    var authorizedPeopleTimes: [Int] = []
+    var authorizedPeopleWeekday: [Int] = []
+    var authorizedPeopleStartDate: [Int] = []
+    var authorizedPeopleAllowedTimePeriod: [Int] = []
     // TODO: furthur implementing Person struct
     
-    init(UID: String, name: String, gender: String, userName: String, roomReferenceNumber: String, authorizedPeople: AuthorizedPeople){
+    init(UID: String, name: String, gender: String, userName: String, roomReferenceNumber: String){
         self.UID = UID
         self.name = name
         self.gender = gender
         self.userName = userName
         self.roomReferenceNumber = roomReferenceNumber
-        self.authorizedPeople = authorizedPeople
         self.ref = nil
     }
-    // TODO1: implement init? from database
+    //
     // TODO2: implement toAnyObject()
     //
     
@@ -44,21 +46,58 @@ struct Person {
             //
             //
             let value = snapshot.value as? [String: AnyObject],
-            let UID = value["UID"] as? String,
-            let name = value["name"] as? String,
-            let gender = value["gender"] as? String,
-            let userName = value["userName"] as? String,
-            let roomReferenceNumber = value["roomReferenceNumber"] as? String,
-            let authorizedPeople = value["authorizedPeople"] as? AuthorizedPeople else {
+            let name = value["Name"] as? String,
+            let gender = value["Gender"] as? String,
+            let userName = value["UserName"] as? String,
+            let roomReferenceNumber = value["RoomReferenceNumber"] as? String,
+            let roommate = value["Roommate"] as? [String],
+            let friend = value["Friend"] as? [String],
+            let logDate = value["LogDate"] as? [Int],
+            let logTime = value["LogTime"] as? [Int],
+            let logRoomReferenceNumber = value["LogRoomReferenceNumber"] as? [String],
+            let authorizedPeopleTimes = value["AuthorizedPeopleTimes"] as? [Int],
+            let authorizedPeopleWeekday = value["AuthorizedPeopleWeekday"] as? [Int],
+            let authorizedPeopleStartDate = value["AuthoriedPeopleStartDate"] as? [Int],
+            let authorizedPeopleAllowedTimePeriod = value["AuthoriedPeopleAllowedTimePeriod"] as? [Int],
+            let authorizedPeople = value["AuthorizedPeople"] as? [String] else {
                 return nil
         }
-        // TODO: initialize UID
         //
         //
-//        self.authorized = authorized
-//        self.times = times
-//        self.weekday = weekday
-//        self.startTime = startTime
-//        self.endTime = endTime
+        //
+        self.ref = snapshot.ref
+        self.UID = snapshot.key
+        self.name = name
+        self.gender = gender
+        self.userName = userName
+        self.roomReferenceNumber = roomReferenceNumber
+        self.roommate = roommate
+        self.friend = friend
+        self.logDate = logDate
+        self.logTime = logTime
+        self.logRoomReferenceNumber = logRoomReferenceNumber
+        self.authorizedPeople = authorizedPeople
+        self.authorizedPeopleTimes = authorizedPeopleTimes
+        self.authorizedPeopleWeekday = authorizedPeopleWeekday
+        self.authorizedPeopleStartDate = authorizedPeopleStartDate
+        self.authorizedPeopleAllowedTimePeriod = authorizedPeopleAllowedTimePeriod
+    }
+    func toAnyObject() -> Any {
+        return [
+            "Name": name,
+            "Gender": gender,
+            "UserName": userName,
+            "RoomReferenceNumber": roomReferenceNumber,
+            "Roommate": roommate,
+            "Friend": friend,
+            "AuthorizedPeople": authorizedPeople,
+            "AuthorizedPeopleTimes": authorizedPeopleTimes,
+            "AuthorizedPeopleWeekday": authorizedPeopleWeekday,
+            "AuthorizedPeopleStartDate": authorizedPeopleStartDate,
+            "AuthorizedPeopleAllowedTimePeriod": authorizedPeopleAllowedTimePeriod,
+            "LogDate": logDate,
+            "LogTime": logTime,
+            "LogRoomReferenceNumber": logRoomReferenceNumber
+        ]
     }
 }

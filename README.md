@@ -25,12 +25,12 @@
             "Gender": "Male",
             "UserName": "xkcd",
             "RoomReferenceNumber": "CATA5230",
-            "Roommate": "UID": ["j8iONssTdMJyzjv2vi53IeYfk1U5", "NssTdMJyzjv2vi53IeYfk1U5j8iO"],
+            "Roommate": ["j8iONssTdMJyzjv2vi53IeYfk1U5", "NssTdMJyzjv2vi53IeYfk1U5j8iO"],
             "Friend": ["TdMJyzjv2vi53IeYfk1U5j8iONss","j8iONssTdMJyzjv2vi53IeYfk1U5", "NssTdMJyzjv2vi53IeYfk1U5j8iO"],
-            "AuthourizedPeople": ["TdMJyzjv2vi53IeYfk1U5j8iONss"],
+            "AuthorizedPeople": ["TdMJyzjv2vi53IeYfk1U5j8iONss"],
             "logsDate": ["0612", "0530"],
             "logsTime": ["0612", "0530"],
-            "logsRoom": ["CATA5230", "CATA8211"]["0612", "0530"]
+            "logsRoom": ["CATA5230", "CATA8211"]
         }
     }
     "Door": {
