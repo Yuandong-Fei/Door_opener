@@ -31,15 +31,20 @@ class FriendsViewController: UITableViewController {
 }
 
 extension FriendsViewController {
+    
+    @IBAction func cancelToFriendsViewController(_ segue: UIStoryboardSegue) {}
+    @IBAction func saveFriendDetail(_ segue: UIStoryboardSegue) {}
+}
+
+extension FriendsViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return friends.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath) as! FriendCell
         
         let friend = friends[indexPath.row]
-        cell.textLabel?.text = friend.name
-        cell.detailTextLabel?.text = friend.userName
+        cell.person = friend
         return cell
     }
 }
