@@ -8,7 +8,7 @@ Opener::Opener()
 	Door.opener();
 }
 // Opener member function
-void Opener::Dooropener()
+void Opener::Door.opener()
 {
 	servo.attach(servoPin);
 	servo.write(0)
