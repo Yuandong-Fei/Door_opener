@@ -1,18 +1,25 @@
 #include "Open.h"
 #include "door_open_header.h"
-#include <iostream>
+#include <>
 #include <servo.h>
 //Opener constructor
-Opener::Opener()
+Open::Open()
 {
-	Door.opener();
+	Door.open();
 }
 // Opener member function
-void Opener::Door.opener()
+void Open::getStatus(string doorReferenceNumber){
+    
+}
+void Open::open(string doorReferenceNumber)
 {
-	servo.attach(servoPin);
+    getStatus();
+    servo.attach(servoPin);
 	servo.write(0)
 	delay(500);
 	servo.detach();
 	digitalWrite(LCDpin,HIGH)
+    
+    updateDatabse();
+    changeServoStatus(doorname, ture);
 }
