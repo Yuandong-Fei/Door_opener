@@ -29,7 +29,7 @@ void Door::openDoor(doorNumber)
 	delay(500);
 	servo.detach();
 	digitalWrite(LCDpin,HIGH)
-    updateDatabseStatus(doorNumber);
+    updateDatabaseStatus(doorNumber);
 }
 
 void Door::closeDoor(doorNumber){
