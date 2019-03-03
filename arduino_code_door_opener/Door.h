@@ -11,11 +11,11 @@ private:
     string doorMessage;
 
 public:
-	void openDoor(doorNumber);
+    void openDoor(doorNumber);
     void getRoom();
     bool getStatus(doorNumber);
     bool verifyStatus(doorNumber);
-	void open(doorNumber);
+    void open(doorNumber);
     void getMessage(doorNumber);
     void closeDoor(doorNumber);
 };
