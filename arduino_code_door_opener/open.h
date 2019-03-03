@@ -1,18 +1,23 @@
-#ifndef OPENER_H
-#define OPENER_H
+#ifndef DOOR_H
+#define DOOR_H
 #include "door_opener_header.h"
+#include <string>
 class Door
 {
 private:
-    string name;
-    Person a;
+    string doorNumber;
+    bool doorStatus;
+    bool authorizeStatus;
+    string doorMessage;
+
 public:
-	Open()
-    void init(string name, Person a);
-    
-    bool getStatus();
-	void open(string door);
-    void close()
+	void openDoor(doorNumber);
+    void getRoom();
+    bool getStatus(doorNumber);
+    bool verifyStatus(doorNumber);
+	void open(doorNumber);
+    void getMessage(doorNumber);
+    void closeDoor(doorNumber);
 };
 
 #endif	
