@@ -2,8 +2,8 @@
 //  LoginViewController.swift
 //  Door_Opener
 //
-//  Created by 晏子恒 on 2/17/19.
-//  Copyright © 2019 晏子恒. All rights reserved.
+//  Created by Ziheng Yan on 2/17/19.
+//  Copyright © 2019 Ziheng Yan. All rights reserved.
 //
 
 import UIKit
@@ -22,9 +22,41 @@ class LoginViewController: UIViewController {
         return .lightContent
     }
     
+    // MARK: UIViewController Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        Auth.auth().addStateDidChangeListener() { auth, user in
+            if user != nil {
+                self.performSegue(withIdentifier: self.loginToList, sender: nil)
+                self.textFieldLoginEmail.text = nil
+                self.textFieldLoginPassword.text = nil
+            }
+        }
+    }
+    
     // MARK: Actions
     @IBAction func loginDidTouch(_ sender: AnyObject) {
-        performSegue(withIdentifier: loginToList, sender: nil)
+        guard
+            let email = textFieldLoginEmail.text,
+            let password = textFieldLoginPassword.text,
+            email.count > 0,
+            password.count > 0
+            else {
+                return
+        }
+        
+        Auth.auth().signIn(withEmail: email, password: password) { user, error in
+            if let error = error, user == nil {
+                let alert = UIAlertController(title: "Sign In Failed",
+                                              message: error.localizedDescription,
+                                              preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default))
+                
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
     }
     
     @IBAction func signUpDidTouch(_ sender: AnyObject) {
@@ -33,6 +65,15 @@ class LoginViewController: UIViewController {
                                       preferredStyle: .alert)
         
         let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
+            
+            let emailField = alert.textFields![0]
+            let passwordField = alert.textFields![1]
+            Auth.auth().createUser(withEmail: emailField.text!, password: passwordField.text!) { user, error in
+                if error == nil {
+                    Auth.auth().signIn(withEmail: self.textFieldLoginEmail.text!,
+                                       password: self.textFieldLoginPassword.text!)
+                }
+            }
         }
         
         let cancelAction = UIAlertAction(title: "Cancel",
@@ -44,7 +85,7 @@ class LoginViewController: UIViewController {
         
         alert.addTextField { textPassword in
             textPassword.isSecureTextEntry = true
-            textPassword.placeholder = "Enter your password"
+            textPassword.placeholder = "Enter your password(at least 6 characters)"
         }
         
         alert.addAction(saveAction)
@@ -52,7 +93,6 @@ class LoginViewController: UIViewController {
         
         present(alert, animated: true, completion: nil)
     }
-    
 }
 
 extension LoginViewController: UITextFieldDelegate {

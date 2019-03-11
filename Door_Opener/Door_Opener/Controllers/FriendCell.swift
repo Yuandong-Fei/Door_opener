@@ -2,8 +2,8 @@
 //  FriendCell.swift
 //  Door_Opener
 //
-//  Created by 晏子恒 on 2/18/19.
-//  Copyright © 2019 晏子恒. All rights reserved.
+//  Created by Ziheng Yan on 2/18/19.
+//  Copyright © 2019 Ziheng Yan. All rights reserved.
 //
 
 import UIKit
@@ -19,8 +19,8 @@ class FriendCell: UITableViewCell {
         didSet {
             guard let person = person else { return }
         
-            nameLabel.text = person.name
-            userNameLabel.text = person.userName
+            nameLabel.text = person.userName
+            userNameLabel.text = person.email
 //            fireImageView.image = image(forFrequency: person.authorizedPeopleTimes[0])
             // TODO change the following statements, just for testing
             fireImageView.image = UIImage(named: "fire")

@@ -66,7 +66,7 @@ class LoginViewController: UIViewController {
         password.count > 0
         else {
             return
-    }
+    }   
     
     Auth.auth().signIn(withEmail: email, password: password) { user, error in
         if let error = error, user == nil {
