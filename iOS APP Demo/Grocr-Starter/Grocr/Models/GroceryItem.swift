@@ -53,7 +53,8 @@ struct GroceryItem {
       let completed = value["completed"] as? Bool else {
       return nil
     }
-    
+    print(value)
+    print("//////////////////////////////////////")
     self.ref = snapshot.ref
     self.key = snapshot.key
     self.name = name

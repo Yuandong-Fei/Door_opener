@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D14EAEA82234673400B3D2C1 /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14EAEA72234673400B3D2C1 /* mainViewController.swift */; };
 		D1713184221A27C50068DE91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1713183221A27C50068DE91 /* AppDelegate.swift */; };
 		D1713186221A27C50068DE91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1713185221A27C50068DE91 /* ViewController.swift */; };
 		D1713189221A27C50068DE91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1713187221A27C50068DE91 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 		6C22AFD43898D5F57B4E9C3F /* Pods-Door_Opener.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Door_Opener.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Door_Opener/Pods-Door_Opener.debug.xcconfig"; sourceTree = "<group>"; };
 		8ADE55E5963037A9A7EB7FE1 /* Pods-Door_Opener.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Door_Opener.release.xcconfig"; path = "Pods/Target Support Files/Pods-Door_Opener/Pods-Door_Opener.release.xcconfig"; sourceTree = "<group>"; };
 		D070198173A9A766479D74CE /* libPods-Door_Opener.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Door_Opener.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D14EAEA72234673400B3D2C1 /* mainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
 		D1713180221A27C50068DE91 /* Door_Opener.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Door_Opener.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1713183221A27C50068DE91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1713185221A27C50068DE91 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +48,7 @@
 		D176D46922225A6000ABF7D3 /* FriendDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailsViewController.swift; sourceTree = "<group>"; };
 		D19CFD722221F86200C2A0A5 /* Door.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Door.swift; sourceTree = "<group>"; };
 		D19CFD742222330B00C2A0A5 /* FriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		D1EE71FA2235F1D3007D1B77 /* Door_Opener.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Door_Opener.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +101,7 @@
 		D1713182221A27C50068DE91 /* Door_Opener */ = {
 			isa = PBXGroup;
 			children = (
+				D1EE71FA2235F1D3007D1B77 /* Door_Opener.entitlements */,
 				D1713198221A2D680068DE91 /* Controllers */,
 				D1713197221A2D4F0068DE91 /* Models */,
 				D1713183221A27C50068DE91 /* AppDelegate.swift */,
@@ -130,6 +134,7 @@
 				D171319F221A8B5C0068DE91 /* LoginViewController.swift */,
 				D17131A1221B71B30068DE91 /* FriendsViewController.swift */,
 				D176D46922225A6000ABF7D3 /* FriendDetailsViewController.swift */,
+				D14EAEA72234673400B3D2C1 /* mainViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -167,6 +172,11 @@
 				TargetAttributes = {
 					D171317F221A27C50068DE91 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -235,6 +245,7 @@
 			files = (
 				D17131A0221A8B5C0068DE91 /* LoginViewController.swift in Sources */,
 				D1713186221A27C50068DE91 /* ViewController.swift in Sources */,
+				D14EAEA82234673400B3D2C1 /* mainViewController.swift in Sources */,
 				D1713184221A27C50068DE91 /* AppDelegate.swift in Sources */,
 				D176D46A22225A6000ABF7D3 /* FriendDetailsViewController.swift in Sources */,
 				D19CFD732221F86200C2A0A5 /* Door.swift in Sources */,
@@ -381,6 +392,7 @@
 			baseConfigurationReference = 6C22AFD43898D5F57B4E9C3F /* Pods-Door_Opener.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Door_Opener/Door_Opener.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F8GLU6B3GQ;
 				INFOPLIST_FILE = Door_Opener/Info.plist;
@@ -400,6 +412,7 @@
 			baseConfigurationReference = 8ADE55E5963037A9A7EB7FE1 /* Pods-Door_Opener.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Door_Opener/Door_Opener.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F8GLU6B3GQ;
 				INFOPLIST_FILE = Door_Opener/Info.plist;

@@ -23,8 +23,8 @@
 // Set these to run example.
 #define FIREBASE_HOST "arduino-cbf24.firebaseio.com"
 #define FIREBASE_AUTH "rS9OB2uPLTx5sWr8wc1aiPEXRjQt1LoWaKhSjqd6"
-#define WIFI_SSID "iPhone XS"
-#define WIFI_PASSWORD "qwertyuiop"
+#define WIFI_SSID "TP-LINK_1808"
+#define WIFI_PASSWORD "zxcvbnm12345"
 
 void setup() {
   Serial.begin(9600);

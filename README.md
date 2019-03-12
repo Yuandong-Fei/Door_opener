@@ -20,8 +20,7 @@
 // The root of the tree
 {
     "Person": {
-        "vi53IeYfk1U5j8iONssTdMJyzjv2": {
-            "Name": "Steven",
+        "Steven": {
             "Gender": "Male",
             "UserName": "xkcd",
             "RoomReferenceNumber": "CATA5230",
