@@ -7,13 +7,13 @@
 #define Door
 #define Status
 #define MagneticSwitch digitalRead(MagneticSwitchpin)
-#define WIFI_SSID "iPhone XS"
-#define WIFI_PASSWORD "qwertyuiop"
-#define FIREBASE_HOST "arduino-cbf24.firebaseio.com"
-#define FIREBASE_AUTH "rS9OB2uPLTx5sWr8wc1aiPEXRjQt1LoWaKhSjqd6"
+#define WIFI_SSID "iPhone (7)"
+#define WIFI_PASSWORD "Mary123456"
+#define FIREBASE_HOST "dooropener-a568d.firebaseio.com"
+#define FIREBASE_AUTH "alNdiBnfzlBMnoCFi6XnDdtEKuErIZVqyTkwvTnx"
 
 int pos = 0;
-String doorNumber = getRoom();
+const String doorNumber =ROOM2;
 Servo myservo;
 
 void setup() {
@@ -36,27 +36,24 @@ void loop() {
   // put your main code here, to run repeatedly:
 
 }
-String getRoom() {
-  String doorNumber = Firebase.getString("Door");
-  return doorNumber;
-}
+
 
 bool getVerifiedStatus(String doorNumber) {
-  String authorizeStatus = Firebase.getString("Door/doorNumber/FaceIDAuthorized");
+  String authorizeStatus = Firebase.getString("Door/"+doorNumber+"/Authorized");
   return (authorizeStatus == "True");
 }
 
 bool getStatus(String doorNumber) {
-  String doorStatus = Firebase.getString("Door/doorNumber/Status");
+  String doorStatus = Firebase.getString("Door/"+doorNumber+"/Status");
   return (doorStatus == "True");
 }
 
 void updateDatabaseStatusTrue(String doorNumber) {
-  Firebase.setBool("Door/doorNumber/Status", true);
+  Firebase.setBool("Door/"+doorNumber+"/Status", true);
 }
 
 void updateDatabaseStatusFalse(String doorNumber) {
-  Firebase.setBool("Door/doorNumber/Status", false);
+  Firebase.setBool("Door/"+doorNumber+"/Status", false);
 }
 
 

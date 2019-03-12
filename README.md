@@ -14,7 +14,9 @@
 5. circuit schematics updated
 6. Servo and LCD tested
 7. App created and logic gateway is updated
-
+##poster
+1.iot
+2.project description
 ## Backend data structure
 ```javascript
 // The root of the tree
