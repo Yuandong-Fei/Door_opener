@@ -2,16 +2,10 @@
 #include <FirebaseArduino.h>
 #include <string>
 #include <Servo.h>
-#include <LiquidCrystal.h>
-
-#define PIRSensorPin 5
 #define MagneticSwitchpin 6
 #define servoPin 7
 #define Door
 #define Status
-#define FaceIDAuthorized
-#define Message
-#define PIRVal analogRead(PIRSensorPin)
 #define MagneticSwitch digitalRead(MagneticSwitchpin)
 #define WIFI_SSID "iPhone XS"
 #define WIFI_PASSWORD "qwertyuiop"
@@ -21,7 +15,6 @@
 int pos = 0;
 String doorNumber = getRoom();
 Servo myservo;
-LiquidCrystal lcd(D6, D8, D1, D2, D3, D4);
 
 void setup() {
   Serial.begin(9600);
@@ -48,38 +41,14 @@ String getRoom() {
   return doorNumber;
 }
 
-bool getStatus(String doorNumber) {
-  String doorStatus = Firebase.getString("Door/doorNumber/Status");
-  if (doorStatus == "True" ) {
-    return true;
-  }
-  else {
-    return false;
-  }
-}
-
 bool getVerifiedStatus(String doorNumber) {
   String authorizeStatus = Firebase.getString("Door/doorNumber/FaceIDAuthorized");
-  if (authorizeStatus == "True" ) {
-    return true;
-  }
-  else {
-    return false;
-  }
+  return (authorizeStatus == "True");
 }
 
-String getMessage(String doorNumber) {
-  String doorMessage = Firebase.getString("Door/doorNumber/Message");
-  return doorMessage;
-}
-
-void LCDDisplay(String doorNumber) {
-  String doorMessage = getMessage(doorNumber);
-  lcd.print(doorMessage);
-  lcd.noDisplay();
-  delay(500);
-  lcd.display();
-  delay(500);
+bool getStatus(String doorNumber) {
+  String doorStatus = Firebase.getString("Door/doorNumber/Status");
+  return (doorStatus == "True");
 }
 
 void updateDatabaseStatusTrue(String doorNumber) {
@@ -109,13 +78,5 @@ void closeDoor(String doorNumber) {
       delay(15);
     }
     updateDatabaseStatusFalse(doorNumber);
-  }
-}
-bool detectPeople() {
-  if (PIRVal < 780) {
-    return true;
-  }
-  else {
-    return false;
   }
 }
