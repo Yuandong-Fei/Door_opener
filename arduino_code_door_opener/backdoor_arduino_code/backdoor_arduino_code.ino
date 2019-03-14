@@ -13,7 +13,7 @@
 #define FIREBASE_AUTH "alNdiBnfzlBMnoCFi6XnDdtEKuErIZVqyTkwvTnx"
 
 int pos = 0;
-const String doorNumber =ROOM2;
+const String doorNumber = ROOM2;
 Servo myservo;
 
 void setup() {

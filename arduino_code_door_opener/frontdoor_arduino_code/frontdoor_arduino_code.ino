@@ -14,7 +14,7 @@
 
 const int trigPin = D7;
 const int echoPin = D5;
-const String doorNumber = "ROOM2";
+const String doorNumber = "CATA5230";
 long duration;
 double distance;
 
